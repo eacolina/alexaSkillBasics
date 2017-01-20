@@ -20,9 +20,6 @@ For this tutorial we will be building a custom skill called **superTODO**, which
   * Publishing your skill to the Amazon dev portal
 
 
-## Setup :
-As you probably already know the Alexa engine is powered by Amazon.So in order to develop a skill you will first need to create an Amazon developer account.To do this go to the <a href = "https://developer.amazon.com"> Amazon Developer Portal </a> and sign in with your account or create a new one. You will also need an Amazon Web Service (AWS) account in order to host the Lambda function that will process the requests from Alexa.When you create the AWS account be sure to select the US East region on the top right corner as it is the only one that supports free Lambda functions.
-
 ## How Alexa works:
 
 In order to develop an Alexa Skill we should first understand how it works:
@@ -31,6 +28,8 @@ In order to develop an Alexa Skill we should first understand how it works:
 
 The connection between steps 1 and 2 are internally made by Amazon's API. Hence we will be working on how use data from step 2 to connected it with steps 3 and 4.
 
+## Getting ready for development :
+As you probably already know the Alexa engine is powered by Amazon.So in order to develop a skill you will first need to create an Amazon developer account.To do this go to the <a href = "https://developer.amazon.com"> Amazon Developer Portal </a> and sign in with your account or create a new one. You will also need an Amazon Web Service (AWS) account in order to host the Lambda function that will process the requests from Alexa.When you create the AWS account be sure to select the US East region on the top right corner as it is the only one that supports free Lambda functions.
 
 ## Creating a skill in the developer portal
 
