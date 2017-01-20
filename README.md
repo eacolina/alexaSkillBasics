@@ -74,13 +74,18 @@ Once you have witten the iinetntt schema, you will wite the uterrances. Utteranc
 intentName calledSentence
 ``` 
 
-if you want to pass a valu to a slot you can do it like this, ex:
+If you want to pass a value to a slot you can do it like this, ex:
 
 ``` json
-addNewUser add user named {userToAdd} to the database
+addNewUser add user named { userToAdd } to the database
 ``` 
 
 
 To learn more about the interaction model check out the offical guide from Amazon: https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/alexa-skills-kit-interaction-model-reference.
 
+## Creating the Lambda function in AWS
+
+Some of you might not familiar with the concept of what a Lambda function is.Lambda is a web service provided by Amazon.This server allows the excecution of your code when a trigger of your choice is activated.Lambda supports 3 languages: Python, C# and Node.js.For the purpose of this tutorial we will use Node.js.
+
+To create the Lambda function for our skill we need to go to the AWS website.
 
