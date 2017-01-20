@@ -67,6 +67,20 @@ The commands used by the skills are called intents.Intents are all the different
   ]   
 }
 ```
-The intents array holds intent objects, teh intenst objects are composed of two components:intent name and slots.Slots are values that can be passed from the user to the intent functions.To learn more about the interaction model check out the offical guide from Amazon: https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/alexa-skills-kit-interaction-model-reference.
+The intents array holds intent objects, teh intenst objects are composed of two components:intent name and slots.Slots are values that can be passed from the user to the intent functions.
+
+Once you have witten the iinetntt schema, you will wite the uterrances. Utterances are the senetces that the user can say to invoke a ceratin intent, it should have the following format:
+``` json
+intentName calledSentence
+``` 
+
+if you want to pass a valu to a slot you can do it like this, ex:
+
+``` json
+addNewUser add user named {userToAdd} to the database
+``` 
+
+
+To learn more about the interaction model check out the offical guide from Amazon: https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/alexa-skills-kit-interaction-model-reference.
 
 
