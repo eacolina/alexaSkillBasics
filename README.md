@@ -43,3 +43,31 @@ As we said before Alexa's apps are called skills.And in order to use those skill
 
 The commands used by the skills are called intents.Intents are all the different function that the skill can execute.You will declare them in the intent schema section in JSON format.Here is an example of what it should look like : 
 
+```json
+{
+  "intents": [
+    {
+      "intent": "addNewUser",
+      "slots": [
+        {
+          "name":"userToAdd",
+          "type": "AMAZON.Person"
+        }
+      ]
+      
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]   
+}
+```
+The intents array holds intent objects, teh intenst objects are composed of two components:intent name and slots.Slots are values that can be passed from the user to the intent functions.To learn more about the interaction model check out the offical guide from Amazon: https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/alexa-skills-kit-interaction-model-reference.
+
+
