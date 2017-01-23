@@ -32,7 +32,7 @@ The connection between steps 1 and 2 are internally made by Amazon's API. Hence 
 
 #<a name = "H2">Getting ready for development</a>:
 
-**Note: **To be able to follow this tutorial properly please clone this repository to your computer.
+**NOTE:** To be able to follow this tutorial properly please clone this repository to your computer.
 
 As you probably already know the Alexa engine is powered by Amazon.So in order to develop a skill, you will first need to create an Amazon developer account.To do this go to the <a href = "https://developer.amazon.com"> Amazon Developer Portal </a> and sign in with your account or create a new one. You will also need an Amazon Web Service (AWS) account in order to host the Lambda function that will process the requests from Alexa.When you create the AWS account be sure to select the **US East Region** on the top right corner as it is the only one that supports free Lambda functions.
 
@@ -85,7 +85,7 @@ If you want to pass a value to a slot you can do it like this, ex:
 addNewUser add user named { userToAdd } to the database // whatever the users says between "named" and "to" will be assigned to the variable "userToAdd"
 ``` 
 
-**NOTE: ** Keep in mind that Alexa has difficulties understanding variations of the same sentences unless you clearly state multiple possibilities in the utterances, so declare as many as you like.
+**NOTE:** Keep in mind that Alexa has difficulties understanding variations of the same sentences unless you clearly state multiple possibilities in the utterances, so declare as many as you like.
 
 
 To learn more about the interaction model check out the official guide from Amazon: https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/alexa-skills-kit-interaction-model-reference.
@@ -139,7 +139,7 @@ The last thing you need to do is to make sure that your **Application ID** match
 
 Now compress the following files in on ZIP folder: **index.js, packages.json, node_modules**. Upload this new ZIP file to your Lambda function.
 
-**NOTE: **
+**NOTE:**
 We upload these last two files as we are using NPM packages.For this project we used the **alexa-sdk** package and the **require** package to make HTTP requests.
 So if you want to start your own project without this boilerplate remember to run the following commands in the directory you are working:
 
