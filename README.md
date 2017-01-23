@@ -32,7 +32,7 @@ The connection between steps 1 and 2 are internally made by Amazon's API. Hence 
 
 #<a name = "H2">Getting ready for development</a>:
 
-To be able to follow this tutorial properly please clone this repository to your computer.
+**Note: **To be able to follow this tutorial properly please clone this repository to your computer.
 
 As you probably already know the Alexa engine is powered by Amazon.So in order to develop a skill, you will first need to create an Amazon developer account.To do this go to the <a href = "https://developer.amazon.com"> Amazon Developer Portal </a> and sign in with your account or create a new one. You will also need an Amazon Web Service (AWS) account in order to host the Lambda function that will process the requests from Alexa.When you create the AWS account be sure to select the **US East Region** on the top right corner as it is the only one that supports free Lambda functions.
 
