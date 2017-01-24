@@ -19,6 +19,7 @@ Amazon Alexa is a voice recognition service that allows the integration of voice
   * [Connect it to your skill.](#H8)
 * [Taking it further:](#H9)
   * [Publishing your skill](#H11)
+  * [Do it your own way](#H12)
 
 
 #<a name = "H1">How Alexa works</a>:
