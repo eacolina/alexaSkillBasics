@@ -21,7 +21,7 @@ exports.handler = function (event, context) { // handler function that will be e
     try {
         console.log("The application ID is:" + event.session.application.applicationId); // log the application ID for control purpose
         console.log(JSON.stringify(event));
-        if (event.session.application.applicationId !== "amzn1.ask.skill.6f2841dd-a8ef-45c0-b071-7976c1930092") { // check the application that's making the request is in fact your skill
+        if (event.session.application.applicationId !== "PASTE YOUR APPPLICATION ID HERE") { // check the application that's making the request is in fact your skill
              context.fail("This application ID does not correspond to your Alexa Skill");
         }
         if (event.session.new) { // keep note if this is a new session
