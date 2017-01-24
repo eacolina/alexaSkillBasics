@@ -4,8 +4,7 @@
 
 # Introduction:
 
-Amazon Alexa is a voice recognition service that allows the integration of voice control to your app or device. In this repo, you will learn how to develop and deploy your own Alexa Skill.
-For this tutorial, we will be building a custom skill called **superTODO**, which will simply add an element to a TODO list web app via RESTful API's.
+Amazon Alexa is a voice recognition service that allows the integration of voice control to your app or device. In this repo, you will learn how to develop and deploy your own Alexa Skill. In this tutorial, we will be building a custom skill called **superTODO**, which will simply add an element to a TODO list web app via RESTful API's.
 
 
 # Table of contents:
@@ -24,28 +23,28 @@ For this tutorial, we will be building a custom skill called **superTODO**, whic
 
 #<a name = "H1">How Alexa works</a>:
 
-In order to develop an Alexa Skill we should first understand how it works:
+In order to develop an Alexa Skill we should first understand how it works by looking at the following use-case:
 
 ![](https://developer.amazon.com/public/binaries/content/gallery/developerportalpublic/alexa_smart_home_ecosystem.png)
 
-The connection between steps 1 and 2 are internally made by Amazon's API. Hence we will be focusing on how to use data from step 2 to connect it with steps 3 and 4.
+To do that or to control an app, the system architecture is expected to look like this:
+![](https://perkinelmer.box.com/shared/static/psnchr8fvqu5njil35yognio1okzkw43.png)
 
 #<a name = "H2">Getting ready for development</a>:
 
 **NOTE:** To be able to follow this tutorial properly please clone this repository to your computer.
 
-As you probably already know the Alexa engine is powered by Amazon.So in order to develop a skill, you will first need to create an Amazon developer account.To do this go to the <a href = "https://developer.amazon.com"> Amazon Developer Portal </a> and sign in with your account or create a new one. You will also need an Amazon Web Service (AWS) account in order to host the Lambda function that will process the requests from Alexa.When you create the AWS account be sure to select the **US East Region** on the top right corner as it is the only one that supports free Lambda functions.
+As you probably already know the Alexa engine is powered by Amazon. So in order to develop a skill, you will first need to create an Amazon developer account. To do this go to the <a href = "https://developer.amazon.com"> Amazon Developer Portal </a> and sign in with your account or create a new one. You will also need an Amazon Web Service (AWS) account in order to host the Lambda function that will process the requests from Alexa. When you create the AWS account be sure to select the **US East Region** on the top right corner as it is the only one that supports free Lambda functions.
 
 #<a name = "H3">Creating a skill in the developer portal</a>
 
-The first step towards creating our app is to create a Skill in the developer portal. Go to the [Amazon Developer Portal](https://developer.amazon.com/), log in, then go to the Alexa tab. There select "Add a New Skill" (top right corner).
-Select a name for your skill(shown in the Amazon Store) and an invocation name (used to call your skill) and leave the skill type as "Custom Interaction Model". Click next to build the interaction model.
+The first step towards creating our app is to create a Skill in the developer portal. Go to the [Amazon Developer Portal](https://developer.amazon.com/), log in, then go to the Alexa tab. There select "Add a New Skill" (top right corner). Select a name for your skill(shown in the Amazon Store) and an invocation name (used to call your skill) and leave the skill type as "Custom Interaction Model". Click next to build the interaction model.
 
 #<a name = "H4">Creating the interaction model</a>
 
-As we said before Alexa's apps are called skills.And in order to use those skills, you can either open them by saying: "Alexa open _skill_" and then call the respective functions of such skill. Or you can say "Alexa ask _skillName_ _command_".
+As we said before Alexa's apps are called skills. And in order to use those skills, you can either open them by saying: "Alexa open _skill_" and then call the respective functions of such skill. Or you can say "Alexa ask _skillName_ _command_".
 
-The commands used by the skills are called intents.Intents are all the different function that the skill can execute.You will declare them in the intent schema section in JSON format.Here is an example of what it should look like: 
+The commands used by the skills are called intents.Intents are all the different function that the skill can execute. You will declare them in the intent schema section in JSON format. Here is an example of what it should look like: 
 
 ```json
 {
@@ -96,7 +95,7 @@ Some of you might not familiar with the concept of what a Lambda function is.Lam
 
 ##<a name = "H6">Anatomy of the Lambda function</a>
 
-The power of the Lambda service is that it only executes your code when needed. But every time your code is called the compiler needs some sort of entry point to your code.This is why we will use handlers.
+The power of the Lambda service is that it only executes your code when needed. But, every time your code is called the compiler needs some sort of entry point to your code.This is why we will use handlers.
 
 
 
@@ -131,7 +130,7 @@ In your Lambda function, there is an ARN identifier on the top right corner, cop
 Go back to the Developer Portal where we left off and go to the configuration tab.
 Here select **'AWS Lambda ARN'** and paste the ARN identifier you just copied.And set **'Account Linking'** to No.
 
-The last thing you need to do is to make sure that your **Application ID** matches the one in the endpoint.For this open the **index.js** file and in line 22 make the following change (you can get the ID next to your skill's name in the developer portal):
+The last thing you need to do is to make sure that your **Application ID** matches the one in the endpoint, which looks like this `amzn1.ask.skill.8b9a4e09-6c0a-45ef-a8a9-3d7aae518ef8`. To do that, open **index.js** file and in line 24 make the following change (you can get the ID next to your skill's name in the developer portal):
 
 ``` js
   if (event.session.application.applicationId !== "PASTE YOUR APPPLICATION ID HERE")
@@ -140,18 +139,17 @@ The last thing you need to do is to make sure that your **Application ID** match
 Now compress the following files in on ZIP folder: **index.js, packages.json, node_modules**. Upload this new ZIP file to your Lambda function.
 
 **NOTE:**
-We upload these last two files as we are using NPM packages.For this project we used the **alexa-sdk** package and the **require** package to make HTTP requests.
+We upload these last two files as we are using NPM packages.For this project we used the **alexa-sdk** package and the **http** package to make HTTP requests.
 So if you want to start your own project without this boilerplate remember to run the following commands in the directory you are working:
 
  ``` bash
-  npm install
-  npm install --save alexa-sdk
-  npm install -g require
+  npm init
+  npm install alexa-sdk http --save
 
 
 ``` 
 
-And CONGRATULATIONS, you have built your own Alexa Skill !!
+And CONGRATULATIONS, you have built your own Alexa Skill!
 You should now be able to test it under the Test tab, or if you have an Alexa-enabled device linked with the same Amazon account you used for development you can try it there too.
 
 #<a name = "H9">Taking it further</a>
