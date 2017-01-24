@@ -156,4 +156,4 @@ You should now be able to test it under the Test tab, or if you have an Alexa-en
 ##<a name = "H11">Publishing your skill</a>
 _Under development_
 ##<a name = "H12">Do it your own way</a>
-As said before the main purpose of this script is to interpret the JSON object sent from the Alexa API and build another JSON object to send back as response.Hence there are multiple ways to do it.One that should be pointed out because of it simplicity and good documentation is the package
+As said before the main purpose of this script is to interpret the JSON object sent from the Alexa API and build another JSON object to send back as response.Hence there are multiple ways to do it.One that should be pointed out because of it simplicity and good documentation is the package <a href = "https://developer.amazon.com"> alexa-app </a> package. 
